@@ -1,0 +1,27 @@
+{
+  "name": "fetch-you",
+  "version": "0.1.0",
+  "description": "Fetch apstraction",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fusionstrings/fetch-you.git"
+  },
+  "author": "Dilip Kr. Shukla <contact@fusionstrings.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fusionstrings/fetch-you/issues"
+  },
+  "homepage": "https://github.com/fusionstrings/fetch-you#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "rest",
+    "json",
+    "isomorphic-fetch",
+    "node-fetch"
+  ],
+  "dependencies": {}
+}
