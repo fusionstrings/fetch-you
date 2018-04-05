@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Fetch apstraction",
   "main": "dist/es/index.js",
-  "module": "index.js",
+  "module": "lib/index.js",
   "files": [
     "dist",
     "lib"
