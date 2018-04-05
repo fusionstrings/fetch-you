@@ -6,7 +6,11 @@ import minify from 'rollup-plugin-babel-minify';
 
 export default [
 	{
-		input: ['./lib/fetch-you.js', './lib/fetch-you-ducks.js'],
+		input: [
+			'./lib/index.js',
+			'./lib/fetch-you.js',
+			'./lib/fetch-you-ducks.js'
+		],
 		plugins: [
 			resolve({ jsnext: true, browser: true }),
 			commonjs(),
