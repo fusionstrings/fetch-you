@@ -14,14 +14,20 @@
   },
   "homepage": "https://github.com/fusionstrings/fetch-you#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf dist",
+    "pretest": "npm run clean && npm run bundle",
+    "test": "jest",
+    "bundle": "cross-env NODE_ENV=production rollup -c",
+    "prepare": "npm test",
+    "dev": "cross-env NODE_ENV=development rollup -c -w"
   },
   "keywords": [
     "fetch",
     "rest",
-    "json",
-    "isomorphic-fetch",
-    "node-fetch"
+    "json"
   ],
-  "dependencies": {}
+  "devDependencies": {
+    "express": "^4.16.3",
+    "tridev": "github:fusionstrings/tridev#next"
+  }
 }
