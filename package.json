@@ -40,10 +40,5 @@
   "devDependencies": {
     "express": "^4.16.3",
     "tridev": "github:fusionstrings/tridev#next"
-  },
-  "engines": {
-    "node": ">=9.8.0",
-    "npm": ">=5.6.0",
-    "yarn": ">=1.5.1"
   }
 }
