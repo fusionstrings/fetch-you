@@ -38,7 +38,7 @@
     "json"
   ],
   "devDependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "tridev": "github:fusionstrings/tridev#next"
   }
 }
