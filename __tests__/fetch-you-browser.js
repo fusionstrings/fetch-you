@@ -1,3 +1,6 @@
+import 'core-js/stable/index.js';
+import 'regenerator-runtime/runtime.js';
+
 describe('fetch-you', () => {
 	beforeAll(async () => {
 		await page.goto('http://localhost:3000');

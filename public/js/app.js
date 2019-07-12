@@ -1,4 +1,4 @@
-import fetchYou from '/es/fetch-you.js';
+import fetchYou from '/esm/fetch-you.js';
 
 function reportError(error) {
 	const container = document.getElementById('main');

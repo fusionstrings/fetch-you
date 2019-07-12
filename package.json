@@ -2,8 +2,9 @@
   "name": "fetch-you",
   "version": "0.4.0",
   "description": "Fetch apstraction",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
+  "main": "dist/esm/main.js",
+  "browser": "dist/esm/main.js",
+  "module": "lib/main.mjs",
   "files": [
     "dist",
     "lib"
@@ -13,7 +14,15 @@
     "test": "__tests__",
     "example": "example"
   },
-  "mode": "esm",
+  "jspm": {
+    "dependencies": {
+      "node-fetch": "^2.6.0",
+      "whatwg-fetch": "^3.0.0"
+    },
+    "devDependencies": {
+      "@jspm/core": "^1.0.4"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fusionstrings/fetch-you.git"
@@ -26,19 +35,28 @@
   "homepage": "https://github.com/fusionstrings/fetch-you#readme",
   "scripts": {
     "clean": "rm -rf dist",
-    "pretest": "npm run clean && npm run bundle",
-    "test": "jest",
-    "bundle": "cross-env NODE_ENV=production rollup -c",
-    "prepare": "npm test",
-    "dev": "cross-env NODE_ENV=development rollup -c -w"
+    "test": "jest --detectOpenHandles",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "server": "node example/server",
+    "prepared": "npm run build && npm run test",
+    "dev": "cross-env NODE_ENV=development rollup -c -w",
+    "jb": "jspm build ./lib/fetch-you-browser.mjs"
   },
   "keywords": [
     "fetch",
     "rest",
     "json"
   ],
+  "peerDependencies": {
+    "jest-puppeteer": "^4.2.0",
+    "puppeteer": "^1.18.1"
+  },
   "devDependencies": {
+    "@jspm/core": "^1.0.4",
+    "cross-env": "^5.2.0",
     "express": "^4.16.3",
-    "tridev": "github:fusionstrings/tridev#next"
-  }
+    "tridev": "^1.0.0"
+  },
+  "type": "module"
 }
