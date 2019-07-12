@@ -1,29 +1,33 @@
 import babelRollup from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
+import jspmRollup from 'rollup-plugin-jspm';
+import { terser } from 'rollup-plugin-terser';
 import replace from 'rollup-plugin-replace';
-import minify from 'rollup-plugin-babel-minify';
+
+const MODE = process.env.NODE_ENV;
+const DEV = MODE === 'development';
 
 export default [
 	{
 		input: [
-			'./lib/index.js',
-			'./lib/fetch-you.js',
-			'./lib/fetch-you-ducks.js'
+			'./lib/main.mjs',
+			'./lib/fetch-you.mjs',
+			'./lib/fetch-you-ducks.mjs'
 		],
 		plugins: [
-			resolve({ jsnext: true, browser: true }),
-			commonjs(),
-			babelRollup({ exclude: 'node_modules/**' }),
 			replace({
-				'process.env.NODE_ENV': JSON.stringify(
-					process.env.NODE_ENV || 'production'
-				)
+				'process.env.NODE_ENV': JSON.stringify(MODE || 'production')
 			}),
-			process.env.NODE_ENV === 'production' && minify()
+			// babelRollup({
+			// 	exclude: [
+			// 		'node_modules/@babel/**'
+			// 		// 'node_modules/core-js/**',
+			// 		// 'node_modules/regenerator-runtime/**',
+			// 		// 'node_modules/whatwg-fetch/**/*.*'
+			// 	]
+			// }),
+			jspmRollup()
+			// !DEV && terser()
 		],
-		experimentalDynamicImport: true,
-		experimentalCodeSplitting: true,
 		output: [
 			{
 				dir: 'dist/system',
@@ -38,8 +42,8 @@ export default [
 				sourcemap: true
 			},
 			{
-				dir: 'dist/es',
-				format: 'es',
+				dir: 'dist/esm',
+				format: 'esm',
 				sourcemap: true
 			}
 		]

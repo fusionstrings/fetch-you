@@ -1,0 +1,18 @@
+{
+  "resolve": {
+    "@jspm/core": "npm:@jspm/core@1.0.4",
+    "node-fetch": "npm:node-fetch@2.6.0",
+    "whatwg-fetch": "npm:whatwg-fetch@3.0.0"
+  },
+  "dependencies": {
+    "npm:@jspm/core@1.0.4": {
+      "source": "https://registry.npmjs.org/@jspm/core/-/core-1.0.4.tgz#sha512-HoA6n4sjAEzU3BnGQpaTPXN0tFbzTe6sGHeuF4Yr9ULsheCwnHrBFOawqK4JDWxCEZQRyuqJv0tgNHTP5eLDMw=="
+    },
+    "npm:node-fetch@2.6.0": {
+      "source": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.0.tgz#sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA=="
+    },
+    "npm:whatwg-fetch@3.0.0": {
+      "source": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q=="
+    }
+  }
+}

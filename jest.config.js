@@ -1,5 +1,5 @@
 module.exports = {
-	preset: 'jest-puppeteer',
+	preset: 'jest-puppeteer'
 	// setupTestFrameworkScriptFile: 'expect-puppeteer',
 	// setupFiles: ['./jest.setup.js']
 };
