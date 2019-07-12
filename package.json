@@ -2,7 +2,7 @@
   "name": "fetch-you",
   "version": "0.4.0",
   "description": "Fetch apstraction",
-  "main": "dist/cjs/main.js",
+  "main": "dist/esm/main.js",
   "browser": "dist/esm/main.js",
   "module": "lib/main.mjs",
   "files": [
