@@ -25,19 +25,13 @@ export default [
 			// 		// 'node_modules/whatwg-fetch/**/*.*'
 			// 	]
 			// }),
-			jspmRollup()
-			// !DEV && terser()
+			jspmRollup(),
+			!DEV && terser()
 		],
 		output: [
 			{
 				dir: 'dist/system',
 				format: 'system',
-				name: 'fetch-you',
-				sourcemap: true
-			},
-			{
-				dir: 'dist/cjs',
-				format: 'cjs',
 				name: 'fetch-you',
 				sourcemap: true
 			},
